@@ -23,7 +23,7 @@
 
 
 /*  Fonts  */
-@font-face {
+/*@font-face {
     font-family: 'raleway-regular';
     src: url('../fonts/raleway-regular.eot');
     src: url('../fonts/raleway-regular.eot?#iefix') format('embedded-opentype'),
@@ -57,7 +57,7 @@
     font-weight: normal;
     font-style: normal;
 
-}
+}*/
 
 
 
@@ -73,12 +73,12 @@ body{
 
 h1, h2, h3, h4, h5 ,h6{
     color: #626262;
-    font-family: "raleway-regular", arial;
+    font-family: "garamond", garamond;
     letter-spacing: 1px;
 }
 
 h1              { font-size: 2em; margin: .67em 0 }
-h2              { font-size: 1.5em; margin: .75em 0 }
+h2              { font-size: 2em; margin: .75em 0 }
 h3              { font-size: 1.17em; margin: .83em 0 }
 h5              { font-size: .83em; margin: 1.5em 0 }
 h6              { font-size: .75em; margin: 1.67em 0 }
@@ -230,7 +230,7 @@ header nav ul li{
 
 header nav ul li a{
     text-decoration: none;  
-    font-family: "raleway-regular";
+    font-family: "garamond";
     font-size: 14px;
 
     transition:all .2s linear;

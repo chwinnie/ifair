@@ -19,45 +19,128 @@
     <script type="text/javascript" src="js/fancybox-thumbs.js"></script>
     <script type="text/javascript" src="js/wow.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+     <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Year');
+        data.addColumn('number', 'Number of Participants');
+        data.addRows([
+          ['Freshmen', 16],
+          ['Sophomores', 35],
+          ['Juniors', 42],
+          ['Seniors', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title': 'Participation by Year',
+        				'width':400,
+                       'height':300,
+                   		'fontName': 'Garamond'};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+
+        //chart 2
+
+        var data2 = new google.visualization.DataTable();
+        data2.addColumn('string', 'Year');
+        data2.addColumn('number', 'Number of Participants');
+        data2.addRows([
+          ['Freshmen', 16],
+          ['Sophomores', 35],
+          ['Juniors', 42],
+          ['Seniors', 2]
+        ]);
+
+        // Set chart options
+        var options2 = {'title': 'Participation by Year',
+        				'width':400,
+                       'height':300,
+                   		'fontName': 'Garamond'};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart2 = new google.visualization.PieChart(document.getElementById('chart2_div'));
+        chart2.draw(data2, options2);
+
+
+      }
+    </script>
 </head>
 <body>
 
 	<section class="billboard dark">
 		<header class="wrapper dark">
-			<a href="#"><img class="logo" src="img/pgn.png" alt=""/></a>
-
-			<nav>
-				<ul>
-					<li><a href="">About Us</a></li>
-					<li><a href="">Products</a></li>
-					<li><a href="">Journal</a></li>
-					<li><a href="">Contact Us</a></li>
-				</ul>
-			</nav>
+			<a href="#"><img class="logo" src="img/HeaderPhoto.png" alt="" style="position: absolute;
+    left: 100px;"/></a>
+			<!-- <a href="#"><img class="logo" src="img/pgn.png" alt="" style="float: right"/></a> -->
 		</header>
 
 
 		<div class="shadow"></div>
 	</section><!--  End billboard  -->
 
+	<section>
+		<div class="title animated wow fadeIn">
+			<h1 style="font-size: 4em; margin: 0.3em;">iFair</h1>
+			<h3>We are the largest student-run career fair on campus.</h3>
+		</div>
+	</section>
+
+<!-- 	<section>
+		<div class="title animated wow fadeIn">
+			<h1>Our Mission</h1>
+			<h3>Our end goal is to provide your company with the opportunity to connect with qualified students and achieve maximum outreach.</h3>
+		</div>
+	</section> -->
+
+	<section class="blog_posts">
+		<div class="title animated wow fadeIn">
+			<h1>Our Mission</h1>
+			<h3>Our end goal is to provide your company with the opportunity to connect with qualified students and achieve maximum outreach.</h3>
+		</div>
+	</section>
+
+
+
+	<section>
+		<div class="title animated wow fadeIn">
+			<h1>Our Unique Advantage</h1>
+			<h3>Our reach extends across all undergraduate schools and all years.</h3>
+		</div>
+	</section>
 
 	<section class="services wrapper">
 		<ul class="clearfix">
 			<li class="animated wow fadeInDown">
-				<img class="icon" src="img/icon1.png" alt=""/>
+				<div class="icon" id="chart_div"></div>
 				<span class="separator"></span>
 				<h2>Officia Deserunt Mollit</h2>
 				<p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua voluptate velit esse
 				cillum dolore.</p>
 			</li>
 			<li class="animated wow fadeInDown"  data-wow-delay=".2s">
-				<img class="icon" src="img/icon2.png" alt=""/>
+				<div class="icon" id="chart2_div"></div>
 				<span class="separator"></span>
 				<h2>Culpa Killum Dolore</h2>
 				<p>aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 			</li>
 			<li class="animated wow fadeInDown"  data-wow-delay=".4s">
-				<img class="icon" src="img/icon3.png" alt=""/>
+				<img class="icon" src="img/calendar.png" alt=""/>
 				<span class="separator"></span>
 				<h2>Elit Tempor Incididunt</h2>
 				<p>nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat enim ad minim veniam.</p>
@@ -65,134 +148,113 @@
 		</ul>
 	</section><!--  End services  -->
 
-
-	<section class="video">
-		<img src="img/video_logo.png" alt="" class="video_logo animated wow fadeInDown"/>
-		<h3 class="animated wow fadeInDown">who we are & what we do</h3>
-		<a href="http://www.youtube.com/embed/cBJyo0tgLnw" id="play_btn" class="fancybox animated wow flipInX" data-wow-duration="2s"></a>
-	</section><!--  End video  -->
-
-
-	<section class="testimonials wrapper">
+	<section class="blog_posts">
 		<div class="title animated wow fadeIn">
-			<h2>Testimonials</h2>
-			<h3>what clients are saying about us</h3>
-			<hr class="separator"/>
+			<h1>Proven Track Record</h1>
+			<h3>We have provided our services to 40+ companies, many of whom return each year to participate.</h3>
 		</div>
 
+		
+	</section>
+
+	<section class="services wrapper">
 		<ul class="clearfix">
 			<li class="animated wow fadeInDown">
-				<p><img src="img/quotes.png" alt="" class="quotes"/>Dolor sit amet consectetur isicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud laboris.
-				<span class="triangle"></span>
-				</p>
-				<div class="client">
-					<img src="img/client1.jpg" class="avatar"/>
-					<div class="client_details">
-						<h4>John Doe</h4>
-						<h5>CEO</h5>
-					</div>
-				</div>
+				<img class="icon" src="img/goldmansachs.png" alt=""/>
 			</li>
 			<li class="animated wow fadeInDown"  data-wow-delay=".2s">
-				<p><img src="img/quotes.png" alt="" class="quotes"/>Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam sunt in culpa officia deserunt mollit anim laborum sint occaecat.
-				<span class="triangle"></span>
-				</p>
-				<div class="client">
-					<img src="img/client2.jpg" class="avatar"/>
-					<div class="client_details">
-						<h4>Alex Martin</h4>
-						<h5>UI Designer</h5>
-					</div>
-				</div>
+				<img class="icon" src="img/jpmorgan.png" alt=""/>
+				<span class="separator"></span>
 			</li>
 			<li class="animated wow fadeInDown"  data-wow-delay=".4s">
-				<p><img src="img/quotes.png" alt="" class="quotes"/>Aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse slum dolore eu fugiat nulla pariatursint occaecat.
-				<span class="triangle"></span>
-				</p>
-				<div class="client">
-					<img src="img/client3.jpg" class="avatar"/>
-					<div class="client_details">
-						<h4>Linda Doe</h4>
-						<h5>Developer</h5>
-					</div>
-				</div>
+				<img class="icon" src="img/BCG.png" alt=""/>
+				<span class="separator"></span>
 			</li>
 		</ul>
-	</section><!--  End testimonials  -->
+	</section><!--  End services  -->
 
+	<section class="services wrapper">
+		<ul class="clearfix">
+			<li class="animated wow fadeInDown">
+				<img class="icon" src="img/oliverwyman.png" alt=""/>
+			</li>
+			<li class="animated wow fadeInDown"  data-wow-delay=".2s">
+				<img class="icon" src="img/macys.png" alt=""/>
+				<span class="separator"></span>
+			</li>
+			<li class="animated wow fadeInDown"  data-wow-delay=".4s">
+				<img class="icon" src="img/microsoft.png" alt=""/>
+				<span class="separator"></span>
+			</li>
+		</ul>
+	</section><!--  End services  -->
+
+		<section>
+		<div class="title animated wow fadeIn">
+			<h3>And many more...</h3>
+		</div>
+	</section>
+
+	<section>
+		<div class="title animated wow fadeIn">
+			<h1>Sponsorship Benefits</h1>
+			<h3>To better serve your business needs, we offer several sponsorship levels and affordable prices.</h3>
+		</div>
+
+		<div class="title animated wow fadeIn">
+			<table style="width:50%; margin: 0 auto; font-family: Garamond;
+	font-size: 14px;">
+			<tr><td colspan="2">Bronze level sponsorship (Base-Level)</td></tr>
+			<tr>
+				<td>Early Registration Special: $400</td>
+				<td>Regular Fee: $500</td>
+			</tr>
+			<tr><td colspan="2">One company booth.</td></tr>
+			</table>
+			<br></br>
+			<table style="width:50%; margin: 0 auto; font-family: Garamond;
+	font-size: 14px;">
+  <tr>
+    <td>Platinum Plus</td>
+    <td>Platinum</td> 
+    <td>Gold</td>
+    <td>Nonprofit</td>
+  </tr>
+  <tr>
+    <td>Early-Registration Special: $1000
+Regular: $1250
+</td>
+    <td>Early-Registration Special: $800
+Regular: $1000
+</td> 
+    <td>Early-Registration Special: $600
+Regular: $750
+</td>
+	<td>Early-Registration Special: $150
+Regular: $150
+</td>
+  </tr>
+</table>
+		</div>
+	</section>
+
+
+	<section>
+		<div class="title animated wow fadeIn">
+			<h1>Contact Us</h1>
+			<h3 style="margin: 0.7em;">Our end goal is to help your company meet its recruiting needs.</h3>
+			<h3 style="margin: 0.7em;">If you have suggestions on how we can better serve your company, please feel free to contact us.</h3>
+			<h3 style="margin: 0.7em;"> As students, we are more than happy to have a conversation with you.</h3>
+			<h3 style="margin: 0.7em;">We look forward to working with you, and we hope to hear from you soon.</h3>
+		</div>
+	</section>
 
 	<section class="blog_posts">
-		<div class="wrapper">
-			<div class="title animated wow fadeIn">
-				<h2>Recent Posts</h2>
-				<h3>the most recent posts from our blog</h3>
-				<hr class="separator"/>
-			</div>
-
-			<ul class="clearfix">
-				<li class="animated wow fadeInDown">
-					<div class="media">
-						<div class="date">
-							<span class="day">25</span>
-							<span class="month">Jun</span>
-						</div>
-						<a href="#">
-							<img src="img/blog_post1.jpg" alt=""/>
-						</a>
-					</div>
-					<a href="#">
-						<h1>Sed do eiusmod tempor incididunt.</h1>
-					</a>
-				</li>
-
-				<li class="animated wow fadeInDown" data-wow-delay=".2s">
-					<div class="media">
-						<div class="date">
-							<span class="day">11</span>
-							<span class="month">May</span>
-						</div>
-						<a href="#">
-							<img src="img/blog_post2.jpg" alt=""/>
-						</a>
-					</div>					
-					<a href="#">
-						<h1>Velit esse cillum dollore fugiat nulla.</h1>
-					</a>
-				</li>
-
-				<li class="animated wow fadeInDown" data-wow-delay=".4s">
-					<div class="media">
-						<div class="date">
-							<span class="day">13</span>
-							<span class="month">Feb</span>
-						</div>
-						<a href="#">
-							<img src="img/blog_post3.jpg" alt=""/>
-						</a>
-					</div>
-					<a href="#">
-						<h1>Officia deserunt mollit est anim laborum.</h1>
-					</a>
-				</li>
-
-				<li class="animated wow fadeInDown" data-wow-delay=".6s">
-					<div class="media">
-						<div class="date">
-							<span class="day">10</span>
-							<span class="month">Jan</span>
-						</div>
-						<a href="#">
-							<img src="img/blog_post4.jpg" alt=""/>
-						</a>
-					</div>
-					<a href="#"><h1>Culpa qui officia deserunt 
-					mollit ani
-					m.</h1>
-				</a>
-				</li>
-			</ul>
+		<div class="title animated wow fadeIn">
+			<h2>Join us</h2>
+			<h3>for Phi Gamma Nu's 12th Annual Internship Fair</h3>
 		</div>
-	</section><!--  End blog_posts  -->
+	</section>
 
 
 	<footer>
